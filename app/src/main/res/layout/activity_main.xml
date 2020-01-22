@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout>
+    <data>
+        <variable
+            name="viewmodel"
+            type="com.clementiano.simpleinstagram.main.MainViewModel" />
+    </data>
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".main.MainActivity">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <com.google.android.material.appbar.CollapsingToolbarLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="?attr/actionBarSize"
+                app:titleEnabled="false"
+                app:expandedTitleTextAppearance="@android:color/transparent"
+                app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="16dp"
+                    app:layout_collapseMode="pin">
+
+                    <TextView
+                        android:id="@+id/textView4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="42dp"
+                        tools:text="18"
+                        android:text="@{viewmodel.followers}"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintEnd_toStartOf="@+id/textView6"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/textView"
+                        app:layout_constraintTop_toTopOf="@+id/circularImageView" />
+
+                    <TextView
+                        android:id="@+id/textView6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="16dp"
+                        tools:text="18"
+                        android:text="@{viewmodel.following}"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/textView4"
+                        app:layout_constraintTop_toTopOf="@+id/circularImageView" />
+
+                    <TextView
+                        android:id="@+id/textView5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Followers"
+                        android:textSize="16sp"
+                        android:alpha="0.86"
+                        app:layout_constraintBottom_toBottomOf="@+id/circularImageView"
+                        app:layout_constraintEnd_toEndOf="@+id/textView4"
+                        app:layout_constraintStart_toStartOf="@+id/textView4"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    <TextView
+                        android:id="@+id/textView7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:fontFamily="sans-serif"
+                        android:text="Following"
+                        android:textSize="16sp"
+                        android:alpha="0.86"
+                        app:layout_constraintBottom_toBottomOf="@+id/circularImageView"
+                        app:layout_constraintEnd_toEndOf="@+id/textView6"
+                        app:layout_constraintStart_toStartOf="@+id/textView6"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    <com.mikhaellopez.circularimageview.CircularImageView
+                        android:id="@+id/circularImageView"
+                        android:layout_width="70dp"
+                        android:layout_height="70dp"
+                        android:layout_centerVertical="true"
+                        android:layout_marginTop="48dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:src="@drawable/sample"
+                        app:civ_border="false"/>
+
+                    <TextView
+                        android:id="@+id/textView"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="60dp"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginEnd="42dp"
+                        tools:text="18"
+                        android:text="@{viewmodel.mediaCount}"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        style="@style/TextAppearance.AppCompat.Body1"
+                        app:layout_constraintBottom_toTopOf="@+id/textView2"
+                        app:layout_constraintEnd_toStartOf="@+id/textView4"
+                        app:layout_constraintHorizontal_bias="0.5"
+                        app:layout_constraintStart_toEndOf="@+id/circularImageView"
+                        app:layout_constraintTop_toTopOf="@+id/circularImageView" />
+
+                    <TextView
+                        android:id="@+id/textView2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:text="Posts"
+                        android:textSize="16sp"
+                        android:alpha="0.86"
+                        app:layout_constraintBottom_toBottomOf="@+id/circularImageView"
+                        app:layout_constraintEnd_toEndOf="@+id/textView"
+                        app:layout_constraintStart_toStartOf="@+id/textView"
+                        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+                    <TextView
+                        android:id="@+id/textView8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="20dp"
+                        tools:text="Clement"
+                        android:text="@{viewmodel.fullname}"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#000"
+                        app:layout_constraintStart_toStartOf="@+id/circularImageView"
+                        app:layout_constraintTop_toBottomOf="@+id/circularImageView" />
+
+                    <TextView
+                        android:id="@+id/textView9"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="24dp"
+                        tools:text="Extraordinary bio content. Extraordinary bio content. Extraordinary bio content."
+                        android:text="@{viewmodel.bio}"
+                        android:textSize="16sp"
+                        android:alpha="0.68"
+                        android:textColor="#000"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/textView8"
+                        app:layout_constraintTop_toBottomOf="@+id/textView8"
+                        app:layout_constraintVertical_bias="0.0" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.appcompat.widget.Toolbar
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="?attr/actionBarSize"
+                    android:background="@color/colorPrimary"
+                    app:layout_collapseMode="pin"
+                    app:title="Profile"/>
+            </com.google.android.material.appbar.CollapsingToolbarLayout>
+
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipeRefreshLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:listitem="@layout/item_pic"
+            app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+            app:spanCount="3"
+            app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+</layout>

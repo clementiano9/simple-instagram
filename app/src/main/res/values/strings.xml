@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Simple Instagram</string>
+    <string name="client_id">266981247601315</string>
+    <string name="base_url">https://api.instagram.com/</string>
+    <string name="redirect_url">https://www.facebook.com/</string>
+    <string name="logout">Logout</string>
+</resources>
